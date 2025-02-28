@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">   
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+        <img src="Instituto_Federal_Marca_2015.svg.png" alt="Logo do Instituto Federal">
+        <div>Catálogo de Livros</div>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="desenvolvedores.html">Desenvolvedores</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="conteudo">
+        <section class="formulario">
+            <h2>Adicionar Novo Livro</h2>
+            <form id="formLivro">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" required>
+                
+                <label for="nota">Nota:</label>
+                <select id="nota">
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="tabela">
+            <h2>Lista de Livros</h2>
+            <table>
+                <caption>Livros cadastrados</caption>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Nota</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaLivros">
+                    <tr>
+                        <td>O principe cruel</td>
+                        <td>Holly Black</td>
+                        <td>★★★★★</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>A hipótese do amor</td>
+                        <td>Ali Hazelwood</td>
+                        <td>★★★★★</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Todo esse tempo</td>
+                        <td>Mikki Daughtry e Rachel Lippincott</td>
+                        <td>★★★★☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Por lugares incriveis</td>
+                        <td>Jennifer Niven</td>
+                        <td>★★★★☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Harry Potter e o prisioneiro de askaban</td>
+                        <td>J.K Rowling</td>
+                        <td>★★★★★</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>É assim que acaba</td>
+                        <td>Collen Hoover</td>
+                        <td>★★★★☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>O pequeno principe</td>
+                        <td>Antoine de saint-Exupéry</td>
+                        <td>★★★★★</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>A garota do lago</td>
+                        <td>Chalie Donlea</td>
+                        <td>★★☆☆☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Imperfeitos</td>
+                        <td>Christian Lauren</td>
+                        <td>★★☆☆☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>A biblioteca da meia-noite</td>
+                        <td>Matt Haig e Adriana Fidalgo</td>
+                        <td>★★★☆☆</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>IFRN - Campus Santa Cruz</strong></p>
+                <p> prof. Marcelo Figueiredo Barbosa Júnior</p>
+        </div>
+     <div class="footer-devs">
+        <p>Desenvolvedores:</p>
+        <ul>
+            <li>Rita de Cássia</li>
+            <li>Evelyn Kauanny</li>
+            <li>Ellen Tammirys</li>
+        </ul>
+     </div>
+     <div class="footer-extra">
+        <p>Trabalho de Autoria Web</p>
+     </div>
+    </div>
+</footer>
+    <script>
+        console.log("Script carregado!");
+        document.getElementById("formLivro").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            const titulo = document.getElementById("titulo").value.trim();
+            const autor = document.getElementById("autor").value.trim();
+            const nota = Number(document.getElementById("nota").value);
+
+            if (titulo === "" || autor ==="" || nota ===""){
+                alert("Preencha todos os campos!");
+                return;
+            }
+            adicionarLivro(titulo, autor, "★".repeat(nota));
+            document.getElementById("formLivro").reset();
+        });
+        function adicionarLivro(titulo, autor, nota){
+            const tabela = document.getElementById("tabelaLivros");
+            const linha = document.createElement("tr");
+            linha.innerHTML = `
+            <td>${titulo}</td>
+            <td>${autor}</td>
+            <td>${nota}</td>
+            <td><button onclick="editarLivro(this)">Editar</button></td>
+             `;
+             tabela.appendChild(linha);
+        }
+        function editarLivro(botao) {
+            const linha = botao.parentElement.parentElement;
+            const titulo = linha.children[0].innerText;
+            const autor = linha.children[1].innerText;
+            const nota = linha.children[2].innerText.length;
+
+            document.getElementById("titulo").value = titulo;
+            document.getElementById("autor").value = autor;
+            document.getElementById("nota").value = nota;
+
+            linha.remove();
+        }
+    </script>
+</body>
+</html>

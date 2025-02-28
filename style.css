@@ -1,0 +1,210 @@
+*{
+    font-family: 'Merriweather', sans-serif;
+}
+body{
+    background-color: #F5E1DA;
+    color: #5D4037;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(to bottom, #F5E1DA, #D7CCC8);
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 800;
+    margin: auto;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+}
+input, select{
+    padding: 8px;
+    border-radius: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    background-color: #5D4037;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #4E342E;
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2)
+}
+.conteudo{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.formulario, .tabela{
+    width: 48%;
+}
+table:hover{
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #8D6E63;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
+th, td{
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+caption{
+    font-weight: bold;
+}
+th{
+    background-color: #5D4037;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+tr:nth-child(even) td{
+    background-color: #E8D8C4;
+}
+td{
+    background-color: #D7CCC8;
+    padding: 10px;
+    border-bottom: 1px solid #BCAAA4;
+    color: white;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5D4037;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+header .logo{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+header .logo img{
+    height: 40px;
+    margin-right: 10px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+nav a:hover{
+    background-color: #4E342E;
+}
+footer{
+    background-color:  #5D4037;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+.footer-info, .footer-devs, .footer-extra{
+    flex: 1;
+    min-width: 250px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-devs ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-devs li{
+    margin-bottom: 5px;
+}
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+.desenvolvedores {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.dev-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dev-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px; 
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dev-card:hover {
+    transform: scale(1.05);
+}
+
+.dev-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 70%;
+    margin-bottom: 15px;
+    border: 4px solid #5D4037;
+}
